@@ -10,14 +10,24 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class ArticleController extends Controller {
 	/**
-	 * @Route("/")
+	 * @Route("/", name="article_list")
 	 * @Method({"GET"})
 	 */
 	public function index() {
 
-		$articles = [ 'Article 1', 'Article 2' ];
+		$articles =  $this->getDoctrine()->getRepository(Article::class)->findAll();
 
 		return $this->render( 'articles/index.html.twig', array( 'articles' => $articles ) );
+	}
+
+	/**
+	 * @Route("/article/{id}", name="article_show")
+	 */
+
+	public function show($id) {
+		$article = $this->getDoctrine()->getRepository(Article::class)->find($id);
+
+		return $this->render('articles/show.html.twig', array('article' => $article));
 	}
 
 //	/**
