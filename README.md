@@ -31,6 +31,7 @@ npm run build
 * [Symfony 4](https://symfony.com/doc/current/index.html) - The PHP Framework used
 * [Npm](https://www.npmjs.com/) - Dependency Management
 * [Twig](https://twig.symfony.com/) - Template engine for PHP
+* [Bootstrap](https://getbootstrap.com/docs/4.1/getting-started/introduction/) - Framework for a Responsive Web Design
 
 ## Contributing
 
